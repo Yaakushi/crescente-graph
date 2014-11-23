@@ -6,6 +6,6 @@
 
 #define NBARALHOS 2
 
-int jogar();
+unsigned long jogar();
 
 int main();
