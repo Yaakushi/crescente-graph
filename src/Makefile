@@ -1,5 +1,5 @@
 OUTPUTFILE=../bin/crescente
-INCFILES=crescente.h
+INCFILES=jogo.h save.h
 CC=gcc -g -Wall
 INCDIR=../include
 LIBDIR=../lib
@@ -12,8 +12,8 @@ ALLEGRO=`pkg-config --cflags --libs allegro_dialog-5.0`
 
 all: $(OUTPUTFILE)
 
-$(OUTPUTFILE): crescente.o save.o
-	$(CC) -o $(OUTPUTFILE) $^ -L$(LIBDIR) -lgrafico -lbaralho -I$(INCDIR) $(ALLEGRO)
+$(OUTPUTFILE): crescente.o save.o jogo.o
+	$(CC) -o $(OUTPUTFILE) $^ -L$(LIBDIR) -lbaralho -I$(INCDIR) $(ALLEGRO)
 
 clean:
 	rm -f *.swp *~ *.tmp

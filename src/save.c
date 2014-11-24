@@ -44,7 +44,7 @@ int loadState(char *file, Monte *blocoPeriferico, Monte *blocoDecrescente, Monte
     }
     int i, j;
     int bSize;
-    unsigned long time;
+    unsigned long tmptime;
     for(i = 0; i < 16; i++) {
         fread(&bSize, sizeof(int), 1, arq);
         blocoPeriferico[i] = malloc(sizeof(char *) * (bSize + 1));
@@ -77,8 +77,9 @@ int loadState(char *file, Monte *blocoPeriferico, Monte *blocoDecrescente, Monte
         }
     }
     fread(reembaralhadas, sizeof(int), 1, arq);
-    fread(&time, sizeof(unsigned long), 1, arq);
-    spentTime -= time;
+    fread(&tmptime, sizeof(unsigned long), 1, arq);
+    *spentTime -= tmptime;
+    printf("%ld - %ld\n", *spentTime, time(NULL));
     fread(mode, sizeof(int), 1, arq);
     if(*mode == 1) fread(limitTime, sizeof(unsigned long), 1, arq);
     return 1;
