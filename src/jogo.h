@@ -1,5 +1,5 @@
-#ifndef CRESCENTE_H_
-#define CRESCENTE_H_
+#ifndef JOGO_H_
+#define JOGO_H_
 
 #define WON 1
 #define LOST 2

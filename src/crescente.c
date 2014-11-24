@@ -52,7 +52,7 @@ int main() {
                 if(bestTime) 
                     printf("* O melhor tempo é de: %ld minutos e %ld segundos.\n\n", bestTime/60, bestTime%60);
                 else
-                    printf("* Não há nenhum registro. Que tal jogar uma partida?\n");
+                    printf("* Não há nenhum registro. Que tal jogar uma partida?\n\n");
                 break;
             case 'S':
                 if(!(fconfig = fopen(CONFIG_FILE, "w"))) {
